@@ -1,0 +1,229 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #01070a;
+}
+
+.portada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#2e2e2e);
+    width: 100%;
+    height: 200px;
+}
+
+
+.infinite{
+    position: relative;
+    width: 95%;
+    height: 70px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(30deg);
+}
+
+.infinite::before{
+    content: '';
+    position:absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #fff 0%, #fff 70%, #525252 70%, #525252 100%);
+    background-size: 120px;
+    animation: animateRoad 1s linear infinite;
+}
+
+@keyframes animateRoad {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: -120px;
+    }
+}
+
+.infinite::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    background-color: #333;
+    bottom: -25px;
+    transform-origin: top;
+    transform: perspective(500px) rotateX(-25deg);
+}
+
+.shadow{
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    width: 95%;
+    transform: translateX(-50%);
+    height: 30px;
+    background: linear-gradient(rgba(253, 253, 253, 0.5), transparent);
+}
+
+.box{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, transparent, #0004);
+    animation: animateBox 1s linear infinite;
+}
+
+@keyframes animateBox {
+    0%{
+        transform: translateX(0);
+    }    
+    100%{
+        transform: translateX(-40px);
+    }  
+}
+
+.square{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    transform-origin: bottom right;
+    animation: animate 1s linear infinite;
+}
+
+.p{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 40%;
+    top: 15px;
+    color: #000;
+    animation: se 1s linear infinite;
+    font-size: 25px;
+    z-index: 1000;
+    font-family: 'Kanit', sans-serif;
+}
+
+@keyframes se {
+    100%{
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+
+.titulo{
+    width: 50%;
+    height: 30%;
+    animation: mover 5s linear infinite;
+    border: 1px solid red;
+    text-align: center;
+}
+
+@keyframes mover {
+    30%{
+        transform: translate(20px);
+    }
+}
+
+.cc{
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.img {
+    width: 45%;
+    height: 230px;
+    object-position: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.gris{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(100%);
+    transition: transform .2s ease-in-out;
+}
+
+.show{
+    transform: translate(0);
+    animation: negro 4s;
+}
+
+.grande{
+    position: absolute;
+    width: 90%;
+    height: 75%;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: .3s .2s;
+}
+
+@keyframes negro {
+    50%{
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes imagen {
+    30%{
+        transform: scale(.5);
+    
+    }
+
+    60%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.show-image{
+    transform: scale(1);
+    animation: imagen 4s;
+}
+
+p{
+    position: absolute;
+    top: 10px;
+    color: #fff;
+    font-size: 30px;
+}
+

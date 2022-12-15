@@ -1,0 +1,99 @@
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    transition: 2s;
+    margin-top: -200px;
+    z-index: 700;
+}
+
+
+.bajar{
+    margin-top: 0;
+}
+
+.boton{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 15px;
+    width: 40px;
+    height: 40px;
+    z-index: 500;
+    background: #fff;
+    border-radius: 5px;
+    animation: boton1 6s linear infinite;
+}
+
+@keyframes boton1 {
+    50%{
+        background: #000;
+        transform: scale(.5);
+    }
+    100%{
+        background: #fff;
+        transform: scale(1);
+    }
+}
+
+.si{
+    background: #000;
+    height: 3px;
+    width: 100%;
+    border-radius: 7px;
+    transition: all .5s;
+    transform-origin: left;
+}
+
+.boton:hover div:first-child {
+    transform: rotate(45deg);
+}
+
+.boton:hover div:nth-child(2) {
+    opacity: 0;
+}
+
+.boton:hover div:last-child {
+    transform: rotate(-45deg);
+}
+
+a{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    width: 20%;
+    font-family: 'Kanit', sans-serif;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff,
+                 0 0 40px #fff,
+                 0 0 80px #fff,
+                 0 0 120px #fff,
+                 0 0 160px #fff;
+}
+
+.linea{
+    transition: 0.5s;
+}
+
+.linea{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, #fff);
+    animation: linea 2s linear infinite;
+}
+
+@keyframes linea {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
